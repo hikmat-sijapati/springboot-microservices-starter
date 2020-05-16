@@ -1,2 +1,10 @@
 server:
-  port: 8090
+  port: 8093
+spring:
+  application:
+    name: authservice
+#Eureka Server Registration
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8091/eureka

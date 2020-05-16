@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.6.RELEASE</version>
+        <version>2.2.7.RELEASE</version>
     </parent>
     <groupId>com.developer.hikmat</groupId>
     <artifactId>microservices</artifactId>
@@ -27,17 +27,20 @@
     <modules>
         <module>apiservice</module>
         <module>authservice</module>
+        <module>discoveryservice</module>
+        <module>gatewayservice</module>
     </modules>
+
     <properties>
         <java.version>1.8</java.version>
+        <spring.boot.version>2.2.7.RELEASE</spring.boot.version>
+        <eureka.server.version>2.2.2.RELEASE</eureka.server.version>
+        <eureka.client.version>2.2.2.RELEASE</eureka.client.version>
+        <gateway.version>2.2.2.RELEASE</gateway.version>
     </properties>
+
     <!-- Global Dependencies -->
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -51,4 +54,13 @@
         </dependency>
     </dependencies>
     <!-- /Global Dependencies -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

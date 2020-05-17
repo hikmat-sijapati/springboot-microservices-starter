@@ -1,5 +1,5 @@
 server:
-  port: 8093
+  port: 8092
 spring:
   application:
     name: authservice
@@ -7,4 +7,4 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8091/eureka
+      defaultZone: http://${DISCOVERY_SERVICE}:8091/eureka

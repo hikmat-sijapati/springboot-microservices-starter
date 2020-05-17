@@ -1,0 +1,47 @@
+version: "3.7"
+services:
+  discoveryservice:
+    container_name: discoveryservice
+    build: ./discoveryservice
+    ports:
+      - 8091:8091
+    restart:
+      on-failure
+    networks:
+      - microservices
+  authservice:
+    container_name: authservice
+    build: ./authservice
+    ports:
+      - 8092:8092
+    environment:
+      - DISCOVERY_SERVICE=discoveryservice
+    restart:
+      on-failure
+    networks:
+      - microservices
+  apiservice:
+    container_name: apiservice
+    build: ./apiservice
+    ports:
+      - 8093:8093
+    environment:
+      - DISCOVERY_SERVICE=discoveryservice
+    restart:
+      on-failure
+    networks:
+      - microservices
+  gatewayservice:
+    container_name: gatewayservice
+    build: ./gatewayservice
+    ports:
+      - 8090:8090
+    restart:
+      on-failure
+    environment:
+      - DISCOVERY_SERVICE=discoveryservice
+    networks:
+      - microservices
+networks:
+  microservices:
+    driver: bridge

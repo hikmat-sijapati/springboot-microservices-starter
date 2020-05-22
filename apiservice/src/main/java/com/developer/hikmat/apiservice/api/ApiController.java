@@ -1,5 +1,6 @@
 package com.developer.hikmat.apiservice.api;
 
+import com.developer.hikmat.sharedservice.service.SharedService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,7 +12,8 @@ public class ApiController {
      * @return
      */
     @RequestMapping(value = "/api", method = RequestMethod.GET)
-    public String index() {
-        return "Hello from API Service";
+    public String index(SharedService sharedService) {
+        //return "Hello from API Service";
+        return sharedService.getName();
     }
 }

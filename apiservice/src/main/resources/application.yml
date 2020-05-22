@@ -3,8 +3,10 @@ server:
 spring:
   application:
     name: apiservice
+  profiles:
+    active: db
 #Eureka Server Registration
-eureka:
-  client:
-    service-url:
-      defaultZone: http://${DISCOVERY_SERVICE}:8091/eureka
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://${DISCOVERY_SERVICE}:8091/eureka

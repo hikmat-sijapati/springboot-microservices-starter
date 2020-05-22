@@ -9,6 +9,7 @@
         <module name="gatewayservice" />
         <module name="apiservice" />
         <module name="discoveryservice" />
+        <module name="sharedservice" />
         <module name="authservice" />
       </profile>
     </annotationProcessing>
@@ -19,6 +20,7 @@
       <module name="gateway-service" target="1.8" />
       <module name="gatewayservice" target="1.8" />
       <module name="microservices" target="1.8" />
+      <module name="sharedservice" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -28,6 +30,7 @@
       <module name="discoveryservice" options="-parameters" />
       <module name="gateway-service" options="-parameters" />
       <module name="gatewayservice" options="-parameters" />
+      <module name="sharedservice" options="-parameters" />
     </option>
   </component>
 </project>

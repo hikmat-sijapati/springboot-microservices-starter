@@ -25,6 +25,7 @@
         </developer>
     </developers>
     <modules>
+        <module>sharedservice</module>
         <module>apiservice</module>
         <module>authservice</module>
         <module>discoveryservice</module>
@@ -60,6 +61,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${spring.boot.version}</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

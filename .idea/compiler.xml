@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="gatewayservice" />
-        <module name="apiservice" />
         <module name="discoveryservice" />
+        <module name="gatewayservice" />
         <module name="sharedservice" />
         <module name="authservice" />
+        <module name="apiservice" />
+        <module name="monitoringservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -20,6 +21,7 @@
       <module name="gateway-service" target="1.8" />
       <module name="gatewayservice" target="1.8" />
       <module name="microservices" target="1.8" />
+      <module name="monitoringservice" target="1.8" />
       <module name="sharedservice" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -30,6 +32,7 @@
       <module name="discoveryservice" options="-parameters" />
       <module name="gateway-service" options="-parameters" />
       <module name="gatewayservice" options="-parameters" />
+      <module name="monitoringservice" options="-parameters" />
       <module name="sharedservice" options="-parameters" />
     </option>
   </component>

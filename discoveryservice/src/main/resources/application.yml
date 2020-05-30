@@ -3,9 +3,13 @@ server:
 spring:
   application:
     name: discoveryservice
+  boot:
+    admin:
+      client:
+        url: ${MONITORING_SERVICE:http://localhost:8095}
 eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://localhost:8091/eureka
+      defaultZone: ${DISCOVERY_SERVICE:http://localhost:8091/eureka}

@@ -30,6 +30,7 @@
         <module>authservice</module>
         <module>discoveryservice</module>
         <module>gatewayservice</module>
+        <module>monitoringservice</module>
     </modules>
 
     <properties>
@@ -38,6 +39,8 @@
         <eureka.server.version>2.2.2.RELEASE</eureka.server.version>
         <eureka.client.version>2.2.2.RELEASE</eureka.client.version>
         <gateway.version>2.2.2.RELEASE</gateway.version>
+        <actuator.version>2.3.0.RELEASE</actuator.version>
+        <spring-boot-admin.version>2.2.3</spring-boot-admin.version>
     </properties>
 
     <!-- Global Dependencies -->
@@ -62,6 +65,14 @@
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${spring.boot.version}</version>
                 <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
             </dependency>
         </dependencies>
     </dependencyManagement>

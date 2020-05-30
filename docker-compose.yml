@@ -5,6 +5,8 @@ services:
     build: ./discoveryservice
     ports:
       - 8091:8091
+    env_file:
+      - ./microservice.env
     restart:
       on-failure
     networks:
@@ -14,32 +16,49 @@ services:
     build: ./authservice
     ports:
       - 8092:8092
-    environment:
-      - DISCOVERY_SERVICE=discoveryservice
+    env_file:
+      - ./microservice.env
     restart:
       on-failure
+    depends_on:
+      - discoveryservice
     networks:
       - microservices
-  apiservice:
-    container_name: apiservice
-    build: ./apiservice
-    ports:
-      - 8093:8093
-    environment:
-      - DISCOVERY_SERVICE=discoveryservice
-    restart:
-      on-failure
-    networks:
-      - microservices
+#  apiservice:
+#    container_name: apiservice
+#    build: ./apiservice
+#    ports:
+#      - 8093:8093
+#    env_file:
+#      - ./microservice.env
+#    restart:
+#      on-failure
+#    depends_on:
+#      - discoveryservice
+#    networks:
+#      - microservices
   gatewayservice:
     container_name: gatewayservice
     build: ./gatewayservice
     ports:
       - 8090:8090
+    env_file:
+      - ./microservice.env
     restart:
       on-failure
-    environment:
-      - DISCOVERY_SERVICE=discoveryservice
+    depends_on:
+      - discoveryservice
+    networks:
+      - microservices
+  monitoringservice:
+    container_name: monitoringservice
+    build: ./monitoringservice
+    ports:
+      - 8095:8095
+    env_file:
+      - ./microservice.env
+    restart:
+      on-failure
     networks:
       - microservices
 networks:

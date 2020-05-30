@@ -5,8 +5,22 @@ spring:
     name: apiservice
   profiles:
     active: db
+  boot:
+    admin:
+      client:
+        url: ${MONITORING_SERVICE:http://localhost:8095}
 #Eureka Server Registration
-#eureka:
-#  client:
-#    service-url:
-#      defaultZone: http://${DISCOVERY_SERVICE}:8091/eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: ${DISCOVERY_SERVICE:http://localhost:8091/eureka}
+    enabled: true
+#Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

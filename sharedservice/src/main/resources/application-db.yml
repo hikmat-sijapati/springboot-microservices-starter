@@ -1,9 +1,9 @@
 #Database Connection
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/microservices
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://${DB_SERVICE:localhost}:${DB_SERVICE_PORT:5432}/${POSTGRES_DB:microservices}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
     hikari:
       minimum-idle: 5
       maximum-pool-size: 20

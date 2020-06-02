@@ -1,5 +1,18 @@
 version: "3.7"
 services:
+  dbservice:
+    container_name: dbservice
+    image: postgres:12
+    ports:
+      - 5433:5432
+    env_file:
+      - ./db.env
+#    restart:
+#      on-failure
+    volumes:
+      - ./postgresql/data/:/var/lib/postgresql/data
+    networks:
+      - microservices
   discoveryservice:
     container_name: discoveryservice
     build: ./discoveryservice
@@ -7,8 +20,9 @@ services:
       - 8091:8091
     env_file:
       - ./microservice.env
-    restart:
-      on-failure
+      - ./db.env
+#    restart:
+#      on-failure
     networks:
       - microservices
   authservice:
@@ -18,25 +32,29 @@ services:
       - 8092:8092
     env_file:
       - ./microservice.env
-    restart:
-      on-failure
+      - ./db.env
+#    restart:
+#      on-failure
     depends_on:
+      - dbservice
       - discoveryservice
     networks:
       - microservices
-#  apiservice:
-#    container_name: apiservice
-#    build: ./apiservice
-#    ports:
-#      - 8093:8093
-#    env_file:
-#      - ./microservice.env
+  apiservice:
+    container_name: apiservice
+    build: ./apiservice
+    ports:
+      - 8093:8093
+    env_file:
+      - ./microservice.env
+      - ./db.env
 #    restart:
 #      on-failure
-#    depends_on:
-#      - discoveryservice
-#    networks:
-#      - microservices
+    depends_on:
+      - dbservice
+      - discoveryservice
+    networks:
+      - microservices
   gatewayservice:
     container_name: gatewayservice
     build: ./gatewayservice
@@ -44,8 +62,8 @@ services:
       - 8090:8090
     env_file:
       - ./microservice.env
-    restart:
-      on-failure
+#    restart:
+#      on-failure
     depends_on:
       - discoveryservice
     networks:
@@ -57,8 +75,8 @@ services:
       - 8095:8095
     env_file:
       - ./microservice.env
-    restart:
-      on-failure
+#    restart:
+#      on-failure
     networks:
       - microservices
 networks:

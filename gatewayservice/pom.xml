@@ -12,11 +12,6 @@
     <name>gatewayservice</name>
     <description>Gateway Service</description>
 
-    <properties>
-        <java.version>1.8</java.version>
-        <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -29,32 +24,16 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-            <version>${eureka.client.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-            <version>${actuator.version}</version>
         </dependency>
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-client</artifactId>
-            <version>${spring-boot-admin.version}</version>
         </dependency>
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <build>
         <plugins>
             <plugin>
@@ -63,5 +42,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

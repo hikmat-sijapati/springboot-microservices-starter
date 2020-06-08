@@ -36,8 +36,10 @@
     <properties>
         <java.version>1.8</java.version>
         <spring.boot.version>2.2.7.RELEASE</spring.boot.version>
+        <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
         <eureka.server.version>2.2.2.RELEASE</eureka.server.version>
         <eureka.client.version>2.2.2.RELEASE</eureka.client.version>
+        <eureka.hystrix.version>2.2.2.RELEASE</eureka.hystrix.version>
         <gateway.version>2.2.2.RELEASE</gateway.version>
         <actuator.version>2.3.0.RELEASE</actuator.version>
         <spring-boot-admin.version>2.2.3</spring-boot-admin.version>
@@ -60,20 +62,91 @@
     <!-- /Global Dependencies -->
     <dependencyManagement>
         <dependencies>
+            <!-- Spring Boot web -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${spring.boot.version}</version>
                 <scope>provided</scope>
             </dependency>
+            <!-- /Spring Boot web -->
+            <!-- Spring Cloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- /Spring Cloud -->
+            <!-- Eureka Server -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+                <version>${eureka.client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+                <version>${eureka.server.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+                <version>${eureka.hystrix.version}</version>
+            </dependency>
+            <!-- /Eureka Server -->
+            <!-- Spring Cloud Gateway -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-gateway</artifactId>
+                <version>${gateway.version}</version>
+            </dependency>
+            <!-- /Spring Cloud Gateway -->
+
+            <!-- Spring Boot Actuator -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>${actuator.version}</version>
+            </dependency>
+            <!-- /Spring Boot Actuator -->
+            <!-- Spring Boot Admin -->
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-server</artifactId>
+                <version>${spring-boot-admin.version}</version>
             </dependency>
             <dependency>
                 <groupId>de.codecentric</groupId>
                 <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring-boot-admin.version}</version>
             </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-dependencies</artifactId>
+                <version>${spring-boot-admin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- /Spring Boot Admin -->
+
+            <!-- Spring Boot Data JPA -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-jpa</artifactId>
+                <version>2.3.0.RELEASE</version>
+                <scope>provided</scope>
+            </dependency>
+            <!-- /Spring Boot Data JPA -->
+            <!-- PostgreSQL -->
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>42.2.12</version>
+                <scope>runtime</scope>
+            </dependency>
+            <!-- /PostgreSQL -->
         </dependencies>
     </dependencyManagement>
 </project>

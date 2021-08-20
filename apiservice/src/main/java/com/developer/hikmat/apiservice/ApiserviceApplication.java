@@ -3,6 +3,7 @@ package com.developer.hikmat.apiservice;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
@@ -10,6 +11,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EntityScan( basePackages = {"com.developer.hikmat"})
 @ComponentScan( basePackages = {"com.developer.hikmat"})
 @EnableDiscoveryClient
+@EnableFeignClients
 public class ApiserviceApplication {
 
 	public static void main(String[] args) {

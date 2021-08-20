@@ -6,8 +6,9 @@
       <module fileurl="file://$PROJECT_DIR$/authservice/authservice.iml" filepath="$PROJECT_DIR$/authservice/authservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/discoveryservice/discoveryservice.iml" filepath="$PROJECT_DIR$/discoveryservice/discoveryservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/gatewayservice/gatewayservice.iml" filepath="$PROJECT_DIR$/gatewayservice/gatewayservice.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/microservices.iml" filepath="$PROJECT_DIR$/.idea/microservices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices.iml" filepath="$PROJECT_DIR$/microservices.iml" />
       <module fileurl="file://$PROJECT_DIR$/monitoringservice/monitoringservice.iml" filepath="$PROJECT_DIR$/monitoringservice/monitoringservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/reportservice/reportservice.iml" filepath="$PROJECT_DIR$/reportservice/reportservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/sharedservice/sharedservice.iml" filepath="$PROJECT_DIR$/sharedservice/sharedservice.iml" />
     </modules>
   </component>

@@ -1,0 +1,28 @@
+server:
+  port: 8096
+spring:
+  application:
+    name: reportservice
+  boot:
+    admin:
+      client:
+        url: http://localhost:8095
+  profiles:
+    active: db
+  cloud:
+    compatibility-verifier:
+      enabled: false
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8091/eureka
+#Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+

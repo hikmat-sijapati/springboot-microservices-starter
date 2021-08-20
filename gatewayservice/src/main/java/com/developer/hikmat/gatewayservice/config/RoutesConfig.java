@@ -24,6 +24,12 @@ public class RoutesConfig {
                                         .setFallbackUri("forward:/fallback/auth")))
                         .uri("lb://authservice")
                         .id("authservice"))
+                .route(r -> r.path("/report/**")
+                        .filters(f -> f.rewritePath("/report/(?<remains>.*)", "/${remains}")
+                                .hystrix(c -> c.setName("hystrix")
+                                        .setFallbackUri("forward:/fallback/report")))
+                        .uri("lb://reportservice")
+                        .id("reportservice"))
                 .build();
     }
 

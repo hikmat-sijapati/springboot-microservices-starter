@@ -17,4 +17,9 @@ public class FallbackController {
     public String apiServiceFallback(){
         return "This is a fallback for api service";
     }
+
+    @GetMapping("/report")
+    public String reportServiceFallback(){
+        return "This is a fallback for report service";
+    }
 }

@@ -2,26 +2,28 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="discoveryservice" />
         <module name="gatewayservice" />
-        <module name="sharedservice" />
-        <module name="authservice" />
         <module name="apiservice" />
+        <module name="authservice" />
+        <module name="sharedservice" />
         <module name="monitoringservice" />
+        <module name="reportservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="apiservice" target="1.8" />
       <module name="authservice" target="1.8" />
       <module name="discoveryservice" target="1.8" />
-      <module name="gateway-service" target="1.8" />
       <module name="gatewayservice" target="1.8" />
       <module name="microservices" target="1.8" />
       <module name="monitoringservice" target="1.8" />
+      <module name="reportservice" target="1.8" />
       <module name="sharedservice" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -30,9 +32,9 @@
       <module name="apiservice" options="-parameters" />
       <module name="authservice" options="-parameters" />
       <module name="discoveryservice" options="-parameters" />
-      <module name="gateway-service" options="-parameters" />
       <module name="gatewayservice" options="-parameters" />
       <module name="monitoringservice" options="-parameters" />
+      <module name="reportservice" options="-parameters" />
       <module name="sharedservice" options="-parameters" />
     </option>
   </component>

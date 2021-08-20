@@ -31,6 +31,7 @@
         <module>discoveryservice</module>
         <module>gatewayservice</module>
         <module>monitoringservice</module>
+        <module>reportservice</module>
     </modules>
 
     <properties>
@@ -43,6 +44,7 @@
         <gateway.version>2.2.2.RELEASE</gateway.version>
         <actuator.version>2.3.0.RELEASE</actuator.version>
         <spring-boot-admin.version>2.2.3</spring-boot-admin.version>
+        <spring-feign-client.version>2.2.2.RELEASE</spring-feign-client.version>
     </properties>
 
     <!-- Global Dependencies -->
@@ -147,6 +149,11 @@
                 <scope>runtime</scope>
             </dependency>
             <!-- /PostgreSQL -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>${spring-feign-client.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
